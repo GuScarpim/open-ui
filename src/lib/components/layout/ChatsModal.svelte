@@ -191,7 +191,7 @@
 						<div class="text-left text-sm w-full mb-3 max-h-[22rem] overflow-y-scroll">
 							{#if chatList.length === 0}
 								<div
-									class="text-xs text-gray-500 dark:text-gray-400 text-center px-5 min-h-20 w-full h-full flex justify-center items-center"
+									class="text-xs text-gray-500 dark:text-gray-50 text-center px-5 min-h-20 w-full h-full flex justify-center items-center"
 								>
 									{$i18n.t('No results found')}
 								</div>
@@ -241,7 +241,7 @@
 									</a>
 
 									<div class="basis-2/5 flex items-center justify-end">
-										<div class="hidden sm:flex text-gray-500 dark:text-gray-400 text-xs">
+										<div class="hidden sm:flex text-gray-500 dark:text-gray-50 text-xs">
 											{dayjs(chat?.updated_at * 1000).calendar()}
 										</div>
 
@@ -339,7 +339,7 @@
 							<div class="text-left text-sm w-full mb-3 max-h-[22rem] overflow-y-scroll">
 								<div class="relative overflow-x-auto">
 									<table
-										class="w-full text-sm text-left text-gray-600 dark:text-gray-400 table-auto"
+										class="w-full text-sm text-left text-gray-600 dark:text-gray-50 table-auto"
 									>
 										<thead
 											class="text-xs text-gray-700 uppercase bg-transparent dark:text-gray-200 border-b-1 border-gray-50 dark:border-gray-850"

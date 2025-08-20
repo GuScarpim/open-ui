@@ -129,7 +129,7 @@
 		if (themeToApply === 'dark' && !_theme.includes('oled')) {
 			document.documentElement.style.setProperty('--color-gray-800', '#333');
 			document.documentElement.style.setProperty('--color-gray-850', '#262626');
-			document.documentElement.style.setProperty('--color-gray-900', '#171717');
+			document.documentElement.style.setProperty('--color-gray-900', '#141923');
 			document.documentElement.style.setProperty('--color-gray-950', '#0d0d0d');
 		}
 
@@ -152,13 +152,13 @@
 					? 'dark'
 					: 'light';
 				console.log('Setting system meta theme color: ' + systemTheme);
-				metaThemeColor.setAttribute('content', systemTheme === 'light' ? '#ffffff' : '#171717');
+				metaThemeColor.setAttribute('content', systemTheme === 'light' ? '#ffffff' : '#141923');
 			} else {
 				console.log('Setting meta theme color: ' + _theme);
 				metaThemeColor.setAttribute(
 					'content',
 					_theme === 'dark'
-						? '#171717'
+						? '#141923'
 						: _theme === 'oled-dark'
 							? '#000000'
 							: _theme === 'her'
@@ -286,7 +286,7 @@
 					className={'w-full text-sm outline-hidden resize-vertical' +
 						($settings.highContrastMode
 							? ' p-2.5 border-2 border-gray-300 dark:border-gray-700 rounded-lg bg-gray-50 dark:bg-gray-850 text-gray-900 dark:text-gray-100 focus:ring-1 focus:ring-blue-500 focus:border-blue-500 overflow-y-hidden'
-							: ' bg-white dark:text-gray-300 dark:bg-gray-900')}
+							: ' bg-white dark:text-gray-300 dark:bg-gray-900 dark:placeholder:text-gray-600/70')}
 					rows="4"
 					placeholder={$i18n.t('Enter system prompt here')}
 				/>

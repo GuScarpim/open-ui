@@ -81,6 +81,8 @@
 	let folders = {};
 	let newFolderId = null;
 
+	const isDarkMode = document.documentElement.classList.contains('dark');
+
 	const initFolders = async () => {
 		const folderList = await getFolders(localStorage.token).catch((error) => {
 			toast.error(`${error}`);
@@ -531,8 +533,8 @@
 						<div class=" self-center flex items-center justify-center size-9">
 							<img
 								crossorigin="anonymous"
-								src="{WEBUI_BASE_URL}/static/favicon.png"
-								class="sidebar-new-chat-icon size-6 rounded-full group-hover:hidden"
+								src={isDarkMode ? "/static/hubai-dark-logo.png" : "/static/hubai-light-logo.png"}
+								class="sidebar-new-chat-icon  rounded-full group-hover:hidden "
 								alt=""
 							/>
 
@@ -695,25 +697,21 @@
 				: 'invisible'}"
 		>
 			<div
-				class="sidebar px-1.5 pt-2 pb-1.5 flex justify-between space-x-1 text-gray-600 dark:text-gray-400 sticky top-0 z-10 bg-gray-50 dark:bg-gray-950"
+				class="sidebar px-1.5 pt-2 pb-1.5 flex justify-between space-x-1 text-gray-600 dark:text-gray-50 sticky top-0 z-10 bg-gray-50 dark:bg-gray-950"
 			>
 				<a
-					class="flex items-center rounded-lg p-1.5 h-full justify-center hover:bg-gray-100 dark:hover:bg-gray-850 transition no-drag-region"
+					class="flex items-center p-1.5 h-full justify-center"
 					href="/"
 					draggable="false"
 					on:click={newChatHandler}
 				>
-					<img
-						crossorigin="anonymous"
-						src="{WEBUI_BASE_URL}/static/favicon.png"
-						class="sidebar-new-chat-icon size-6 rounded-full"
-						alt=""
-					/>
-				</a>
-
-				<a href="/" class="flex flex-1 px-1.5" on:click={newChatHandler}>
-					<div class=" self-center font-medium text-gray-850 dark:text-white font-primary">
-						{$WEBUI_NAME}
+					<div class=" w-23 h-12 rounded-full overflow-hidden flex items-center justify-center">
+						<img
+							crossorigin="anonymous"
+							src={isDarkMode ? "/static/hubai-dark-logo.png" : "/static/hubai-light-logo.png"}
+							class="object-cover w-full h-full"
+							alt=""
+						/>
 					</div>
 				</a>
 				<Tooltip
@@ -726,8 +724,8 @@
 							showSidebar.set(!$showSidebar);
 						}}
 					>
-						<div class=" self-center p-1.5">
-							<Sidebar />
+						<div class=" self-center p-1.5 text-gray-800 dark:text-gray-200">
+							<Sidebar/>
 						</div>
 					</button>
 				</Tooltip>
@@ -743,7 +741,7 @@
 						on:click={newChatHandler}
 					>
 						<div class="self-center">
-							<PencilSquare className=" size-4.5" strokeWidth="2" />
+							<PencilSquare className=" size-4.5 text-primary" strokeWidth="2" />
 						</div>
 
 						<div class="flex self-center translate-y-[0.5px]">
@@ -761,7 +759,7 @@
 						draggable="false"
 					>
 						<div class="self-center">
-							<Search strokeWidth="2" className="size-4.5" />
+							<Search strokeWidth="2" className="size-4.5 text-primary" />
 						</div>
 
 						<div class="flex self-center translate-y-[0.5px]">
@@ -779,7 +777,7 @@
 							draggable="false"
 						>
 							<div class="self-center">
-								<Note className="size-4.5" strokeWidth="2" />
+								<Note className="size-4.5 text-primary" strokeWidth="2" />
 							</div>
 
 							<div class="flex self-center translate-y-[0.5px]">
@@ -804,7 +802,7 @@
 									viewBox="0 0 24 24"
 									stroke-width="2"
 									stroke="currentColor"
-									class="size-4.5"
+									class="size-4.5 text-primary"
 								>
 									<path
 										stroke-linecap="round"

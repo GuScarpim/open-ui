@@ -195,7 +195,7 @@
 
 					<div>
 						<button
-							class=" text-xs text-center text-gray-800 dark:text-gray-400 rounded-full px-4 py-0.5 bg-gray-100 dark:bg-gray-850"
+							class=" text-xs text-center text-gray-800 dark:text-gray-50 rounded-full px-4 py-0.5 bg-gray-100 dark:bg-gray-850"
 							on:click={async () => {
 								if (canvasPixelTest()) {
 									profileImageUrl = generateInitialsImage(name);
@@ -213,7 +213,7 @@
 						>
 
 						<button
-							class=" text-xs text-center text-gray-800 dark:text-gray-400 rounded-full px-4 py-0.5 bg-gray-100 dark:bg-gray-850"
+							class=" text-xs text-center text-gray-800 dark:text-gray-50 rounded-full px-4 py-0.5 bg-gray-100 dark:bg-gray-850"
 							on:click={async () => {
 								const url = await getGravatarUrl(localStorage.token, $user?.email);
 
@@ -222,7 +222,7 @@
 						>
 
 						<button
-							class=" text-xs text-center text-gray-800 dark:text-gray-400 rounded-lg px-2 py-1"
+							class=" text-xs text-center text-gray-800 dark:text-gray-50 rounded-lg px-2 py-1"
 							on:click={async () => {
 								profileImageUrl = `${WEBUI_BASE_URL}/user.png`;
 							}}>{$i18n.t('Remove')}</button

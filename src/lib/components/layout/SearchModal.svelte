@@ -258,7 +258,7 @@
 			>
 				{#if chatList}
 					{#if chatList.length === 0}
-						<div class="text-xs text-gray-500 dark:text-gray-400 text-center px-5">
+						<div class="text-xs text-gray-500 dark:text-gray-50 text-center px-5">
 							{$i18n.t('No results found')}
 						</div>
 					{/if}
@@ -314,7 +314,7 @@
 								</div>
 							</div>
 
-							<div class=" pl-3 shrink-0 text-gray-500 dark:text-gray-400 text-xs">
+							<div class=" pl-3 shrink-0 text-gray-500 dark:text-gray-50 text-xs">
 								{dayjs(chat?.updated_at * 1000).calendar()}
 							</div>
 						</a>
@@ -346,7 +346,7 @@
 			>
 				{#if messages === null}
 					<div
-						class="w-full h-full flex justify-center items-center text-gray-500 dark:text-gray-400 text-sm"
+						class="w-full h-full flex justify-center items-center text-gray-500 dark:text-gray-50 text-sm"
 					>
 						{$i18n.t('Select a conversation to preview')}
 					</div>

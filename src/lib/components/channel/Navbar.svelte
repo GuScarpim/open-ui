@@ -28,7 +28,7 @@
 				<div
 					class="{$showSidebar
 						? 'md:hidden'
-						: ''} mr-1.5 mt-0.5 self-start flex flex-none items-center text-gray-600 dark:text-gray-400"
+						: ''} mr-1.5 mt-0.5 self-start flex flex-none items-center text-gray-600 dark:text-gray-50"
 				>
 					<Tooltip
 						content={$showSidebar ? $i18n.t('Close Sidebar') : $i18n.t('Open Sidebar')}
@@ -61,7 +61,7 @@
 				{/if}
 			</div>
 
-			<div class="self-start flex flex-none items-center text-gray-600 dark:text-gray-400">
+			<div class="self-start flex flex-none items-center text-gray-600 dark:text-gray-50">
 				{#if $user !== undefined}
 					<UserMenu
 						className="max-w-[240px]"

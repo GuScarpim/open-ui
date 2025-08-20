@@ -471,7 +471,7 @@
 											/>
 
 											<input
-												class="px-3 text-xs w-full bg-transparent outline-hidden text-gray-600 dark:text-gray-400"
+												class="px-3 text-xs w-full bg-transparent outline-hidden text-gray-600 dark:text-gray-50"
 												placeholder={$i18n.t('Subtitle (e.g. about the Roman Empire)')}
 												bind:value={prompt.title[1]}
 											/>

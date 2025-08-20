@@ -296,7 +296,7 @@
 			</div>
 		</div>
 
-		<div class="px-5 pb-4 text-xs text-gray-500 dark:text-gray-400">
+		<div class="px-5 pb-4 text-xs text-gray-500 dark:text-gray-50">
 			{$i18n.t(
 				'Shortcuts with an asterisk (*) are situational and only active under specific conditions.'
 			)}

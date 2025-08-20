@@ -124,10 +124,10 @@
 		<div class="relative w-full group">
 			<div class="scrollbar-hidden relative overflow-x-auto max-w-full rounded-lg">
 				<table
-					class=" w-full text-sm text-left text-gray-500 dark:text-gray-400 max-w-full rounded-xl"
+					class=" w-full text-sm text-left text-gray-500 dark:text-gray-50 max-w-full rounded-xl"
 				>
 					<thead
-						class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-850 dark:text-gray-400 border-none"
+						class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-850 dark:text-gray-50 border-none"
 					>
 						<tr class="">
 							{#each token.header as header, headerIdx}

@@ -381,17 +381,17 @@
 		</div>
 	{/if}
 	{#if (rankedModels ?? []).length === 0}
-		<div class="text-center text-xs text-gray-500 dark:text-gray-400 py-1">
+		<div class="text-center text-xs text-gray-500 dark:text-gray-50 py-1">
 			{$i18n.t('No models found')}
 		</div>
 	{:else}
 		<table
-			class="w-full text-sm text-left text-gray-500 dark:text-gray-400 table-auto max-w-full rounded {loadingLeaderboard
+			class="w-full text-sm text-left text-gray-500 dark:text-gray-50 table-auto max-w-full rounded {loadingLeaderboard
 				? 'opacity-20'
 				: ''}"
 		>
 			<thead
-				class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-850 dark:text-gray-400 -translate-y-0.5"
+				class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-850 dark:text-gray-50 -translate-y-0.5"
 			>
 				<tr class="">
 					<th

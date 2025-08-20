@@ -291,7 +291,7 @@
 											{/if}
 
 											{#if reaction.user_ids.length > 0}
-												<div class="text-xs font-medium text-gray-500 dark:text-gray-400">
+												<div class="text-xs font-medium text-gray-500 dark:text-gray-50">
 													{reaction.user_ids?.length}
 												</div>
 											{/if}
@@ -306,7 +306,7 @@
 								>
 									<Tooltip content={$i18n.t('Add Reaction')}>
 										<div
-											class="flex items-center gap-1.5 bg-gray-500/10 hover:outline hover:outline-gray-700/30 dark:hover:outline-gray-300/30 hover:outline-1 transition rounded-xl px-1 py-1 cursor-pointer text-gray-500 dark:text-gray-400"
+											class="flex items-center gap-1.5 bg-gray-500/10 hover:outline hover:outline-gray-700/30 dark:hover:outline-gray-300/30 hover:outline-1 transition rounded-xl px-1 py-1 cursor-pointer text-gray-500 dark:text-gray-50"
 										>
 											<FaceSmile />
 										</div>
@@ -319,7 +319,7 @@
 					{#if !thread && message.reply_count > 0}
 						<div class="flex items-center gap-1.5 -mt-0.5 mb-1.5">
 							<button
-								class="flex items-center text-xs py-1 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition"
+								class="flex items-center text-xs py-1 text-gray-500 dark:text-gray-50 hover:text-gray-700 dark:hover:text-gray-300 transition"
 								on:click={() => {
 									onThread(message.id);
 								}}

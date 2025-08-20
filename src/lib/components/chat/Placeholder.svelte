@@ -104,7 +104,7 @@
 					}}
 				/>
 			{:else}
-				<div class="flex flex-row justify-center gap-3 @sm:gap-3.5 w-fit px-5 max-w-xl">
+				<div class="flex flex-col justify-center gap-3 @sm:gap-3.5 w-fit px-5 max-w-xl">
 					<div class="flex shrink-0 justify-center">
 						<div class="flex -space-x-4 mb-0.5" in:fade={{ duration: 100 }}>
 							{#each models as model, modelIdx}
@@ -123,16 +123,18 @@
 											selectedModelIdx = modelIdx;
 										}}
 									>
-										<img
-											crossorigin="anonymous"
-											src={model?.info?.meta?.profile_image_url ??
-												($i18n.language === 'dg-DG'
-													? `${WEBUI_BASE_URL}/doge.png`
-													: `${WEBUI_BASE_URL}/static/favicon.png`)}
-											class=" size-9 @sm:size-10 rounded-full border-[1px] border-gray-100 dark:border-none"
-											aria-hidden="true"
-											draggable="false"
-										/>
+										<div class="flex items-center justify-center w-25 h-12 @sm:w-30 @sm:h-18 overflow-hidden rounded-full border-[1px] border-gray-100 dark:border-none ">
+											<img
+												crossorigin="anonymous"
+												src={model?.info?.meta?.profile_image_url ??
+													($i18n.language === 'dg-DG'
+														? `${WEBUI_BASE_URL}/doge.png`
+														: `static/hubai-dark-logo.png`)}
+												class=" w-full border-[1px] border-gray-100 dark:border-none"
+												aria-hidden="true"
+												draggable="false"
+											/>
+										</div>
 									</button>
 								</Tooltip>
 							{/each}
@@ -172,7 +174,7 @@
 								placement="top"
 							>
 								<div
-									class="mt-0.5 px-2 text-sm font-normal text-gray-500 dark:text-gray-400 line-clamp-2 max-w-xl markdown"
+									class="mt-0.5 px-2 text-sm font-normal text-gray-500 dark:text-gray-50 line-clamp-2 max-w-xl markdown"
 								>
 									{@html marked.parse(
 										sanitizeResponseContent(

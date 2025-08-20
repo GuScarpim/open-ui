@@ -137,10 +137,10 @@
 
 			if (isDarkMode) {
 				const darkImage = new Image();
-				darkImage.src = `${WEBUI_BASE_URL}/static/favicon-dark.png`;
+				darkImage.src = `/static/hubai-light-logo.png`;
 
 				darkImage.onload = () => {
-					logo.src = `${WEBUI_BASE_URL}/static/favicon-dark.png`;
+					logo.src = `/static/hubai-dark-logo.png`;
 					logo.style.filter = ''; // Ensure no inversion is applied if favicon-dark.png exists
 				};
 
@@ -184,11 +184,155 @@
 />
 
 <div class="w-full h-screen max-h-[100dvh] text-white relative" id="auth-page">
-	<div class="w-full h-full absolute top-0 left-0 bg-white dark:bg-black"></div>
+	<div class="w-full h-full absolute top-0 left-0 bg-white dark:bg-gray-800"></div>
 
 	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region" />
 
+
+
+	<!-- Simple sigin -->
+	<h1>Teste</h1>
+
+	
+
 	{#if loaded}
+		<div class="fixed flex justify-center items-center h-full w-full">
+			<!-- Left column: Logo and color -->
+			<div class="flex flex-col justify-center items-center w-full max-w-md h-[480px] bg-[#004143] rounded-l-2xl">
+				<img
+					id="logo"
+					crossorigin="anonymous"
+					src="{WEBUI_BASE_URL}/static/hubai-dark-logo.png"
+					class="size-58 rounded-full mb-4"
+					alt="Logo"
+				/>
+
+			</div>
+			<!-- Right column: Form -->
+			<div class="flex flex-col justify-center items-center w-full max-w-md h-[480px] bg-white dark:bg-gray-800 rounded-r-2xl shadow-lg">
+				<form
+					class="w-full px-8 flex flex-col gap-4"
+					on:submit|preventDefault={submitHandler}
+				>
+					<div class="text-xl font-semibold text-center mb-2 dark:text-gray-100">
+						{#if mode === 'ldap'}
+							{$i18n.t(`Sign in to {{WEBUI_NAME}} with LDAP`, { WEBUI_NAME: $WEBUI_NAME })}
+						{:else if mode === 'signin'}
+							{$i18n.t(`Sign in to {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
+						{:else}
+							{$i18n.t(`Sign up to {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
+						{/if}
+					</div>
+					{#if mode === 'signup'}
+						<div>
+							<label for="name" class="text-sm font-medium block mb-1">{$i18n.t('Name')}</label>
+							<input
+								bind:value={name}
+								type="text"
+								id="name"
+								class="w-full text-sm bg-transparent border-b border-gray-300 dark:border-gray-600 py-2"
+								autocomplete="name"
+								placeholder={$i18n.t('Enter Your Full Name')}
+								required
+							/>
+						</div>
+					{/if}
+					{#if mode === 'ldap'}
+						<div>
+							<label for="username" class="text-sm font-medium block mb-1">{$i18n.t('Username')}</label>
+							<input
+								bind:value={ldapUsername}
+								type="text"
+								id="username"
+								class="w-full text-sm bg-transparent border-b border-gray-300 dark:border-gray-600 py-2"
+								autocomplete="username"
+								placeholder={$i18n.t('Enter Your Username')}
+								required
+							/>
+						</div>
+					{:else}
+						<div>
+							<label for="email" class="text-sm font-medium block mb-1">{$i18n.t('Email')}</label>
+							<input
+								bind:value={email}
+								type="email"
+								id="email"
+								class="w-full text-sm bg-transparent border-b border-gray-300 dark:border-gray-600 py-2"
+								autocomplete="email"
+								placeholder={$i18n.t('Enter Your Email')}
+								required
+							/>
+						</div>
+					{/if}
+					<div>
+						<label for="password" class="text-sm font-medium block mb-1">{$i18n.t('Password')}</label>
+						<SensitiveInput
+							bind:value={password}
+							type="password"
+							id="password"
+							class="w-full text-sm bg-transparent border-b border-gray-300 dark:border-gray-600 py-2"
+							placeholder={$i18n.t('Enter Your Password')}
+							autocomplete={mode === 'signup' ? 'new-password' : 'current-password'}
+							required
+						/>
+					</div>
+					{#if mode === 'signup' && $config?.features?.enable_signup_password_confirmation}
+						<div>
+							<label for="confirm-password" class="text-sm font-medium block mb-1">{$i18n.t('Confirm Password')}</label>
+							<SensitiveInput
+								bind:value={confirmPassword}
+								type="password"
+								id="confirm-password"
+								class="w-full text-sm bg-transparent border-b border-gray-300 dark:border-gray-600 py-2"
+								placeholder={$i18n.t('Confirm Your Password')}
+								autocomplete="new-password"
+								required
+							/>
+						</div>
+					{/if}
+					<button
+						class="bg-primary text-white font-medium rounded-full py-2 mt-2 hover:bg-primary/90 transition"
+						type="submit"
+					>
+						{mode === 'ldap'
+							? $i18n.t('Authenticate')
+							: mode === 'signin'
+								? $i18n.t('Sign in')
+								: $i18n.t('Create Account')}
+					</button>
+					{#if $config?.features.enable_signup && mode !== 'ldap'}
+						<div class="text-sm text-center mt-2">
+							{mode === 'signin'
+								? $i18n.t("Don't have an account?")
+								: $i18n.t('Already have an account?')}
+							<button
+								class="font-medium underline ml-2"
+								type="button"
+								on:click={() => { mode = mode === 'signin' ? 'signup' : 'signin'; }}
+							>
+								{mode === 'signin' ? $i18n.t('Sign up') : $i18n.t('Sign in')}
+							</button>
+						</div>
+					{/if}
+					{#if $config?.features.enable_ldap && $config?.features.enable_login_form}
+						<div class="text-xs text-center mt-2">
+							<button
+								class="underline"
+								type="button"
+								on:click={() => { mode = mode === 'ldap' ? 'signin' : 'ldap'; }}
+							>
+								{mode === 'ldap'
+									? $i18n.t('Continue with Email')
+									: $i18n.t('Continue with LDAP')}
+							</button>
+						</div>
+					{/if}
+				</form>
+			</div>
+		</div>
+	{/if}
+
+	<!-- {#if loaded}
 		<div
 			class="fixed bg-transparent min-h-screen w-full flex justify-center font-primary z-50 text-black dark:text-white"
 			id="auth-container"
@@ -216,7 +360,14 @@
 									<img
 										id="logo"
 										crossorigin="anonymous"
-										src="{WEBUI_BASE_URL}/static/favicon.png"
+										src="{WEBUI_BASE_URL}/static/hubai-dark-logo.png"
+										class="size-24 rounded-full"
+										alt=""
+									/>
+									<img
+										id="logo"
+										crossorigin="anonymous"
+										src="/static/hubai-dark-logo.png"
 										class="size-24 rounded-full"
 										alt=""
 									/>
@@ -535,7 +686,7 @@
 						</div>
 						{#if $config?.metadata?.login_footer}
 							<div class="max-w-3xl mx-auto">
-								<div class="mt-2 text-[0.7rem] text-gray-500 dark:text-gray-400 marked">
+								<div class="mt-2 text-[0.7rem] text-gray-500 dark:text-gray-50 marked">
 									{@html DOMPurify.sanitize(marked($config?.metadata?.login_footer))}
 								</div>
 							</div>
@@ -560,5 +711,5 @@
 				</div>
 			</div>
 		{/if}
-	{/if}
+	{/if} -->
 </div>

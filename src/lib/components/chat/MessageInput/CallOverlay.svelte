@@ -716,7 +716,7 @@
 					</div>
 				{:else if loading || assistantSpeaking}
 					<svg
-						class="size-12 text-gray-900 dark:text-gray-400"
+						class="size-12 text-gray-900 dark:text-gray-50"
 						viewBox="0 0 24 24"
 						fill="currentColor"
 						xmlns="http://www.w3.org/2000/svg"
@@ -798,7 +798,7 @@
 						</div>
 					{:else if loading || assistantSpeaking}
 						<svg
-							class="size-44 text-gray-900 dark:text-gray-400"
+							class="size-44 text-gray-900 dark:text-gray-50"
 							viewBox="0 0 24 24"
 							fill="currentColor"
 							xmlns="http://www.w3.org/2000/svg"

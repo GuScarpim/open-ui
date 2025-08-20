@@ -105,7 +105,7 @@
 	<div class="text-left text-sm w-full mb-3">
 		{#if chatList.length === 0}
 			<div
-				class="text-xs text-gray-500 dark:text-gray-400 text-center px-5 min-h-20 w-full h-full flex justify-center items-center"
+				class="text-xs text-gray-500 dark:text-gray-50 text-center px-5 min-h-20 w-full h-full flex justify-center items-center"
 			>
 				{$i18n.t('No chats found')}
 			</div>
@@ -151,7 +151,7 @@
 				</div>
 
 				<div class="hidden sm:flex sm:basis-2/5 items-center justify-end">
-					<div class=" text-gray-500 dark:text-gray-400 text-xs">
+					<div class=" text-gray-500 dark:text-gray-50 text-xs">
 						{dayjs(chat?.updated_at * 1000).calendar()}
 					</div>
 				</div>

@@ -445,7 +445,7 @@
 				class="text-sm
         
         
-        {loading ? ' text-gray-500  dark:text-gray-400  ' : ' text-indigo-400 '} 
+        {loading ? ' text-gray-500  dark:text-gray-50  ' : ' text-indigo-400 '} 
        font-medium flex-1 mx-auto text-center"
 			>
 				{formatSeconds(durationSeconds)}

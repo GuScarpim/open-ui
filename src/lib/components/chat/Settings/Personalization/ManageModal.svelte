@@ -80,7 +80,7 @@
 				{#if memories.length > 0}
 					<div class="text-left text-sm w-full mb-4 overflow-y-scroll">
 						<div class="relative overflow-x-auto">
-							<table class="w-full text-sm text-left text-gray-600 dark:text-gray-400 table-auto">
+							<table class="w-full text-sm text-left text-gray-600 dark:text-gray-50 table-auto">
 								<thead
 									class="text-xs text-gray-700 uppercase bg-transparent dark:text-gray-200 border-b-2 border-gray-50 dark:border-gray-850"
 								>

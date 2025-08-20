@@ -164,7 +164,7 @@
 
 			<div class="max-h-56 overflow-y-scroll">
 				{#if filteredItems.length === 0}
-					<div class="text-center text-xs text-gray-500 dark:text-gray-400 py-4">
+					<div class="text-center text-xs text-gray-500 dark:text-gray-50 py-4">
 						{$i18n.t('No knowledge found')}
 					</div>
 				{:else}

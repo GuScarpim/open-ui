@@ -223,10 +223,10 @@
 		class="scrollbar-hidden relative whitespace-nowrap overflow-x-auto max-w-full rounded-sm pt-0.5"
 	>
 		<table
-			class="w-full text-sm text-left text-gray-500 dark:text-gray-400 table-auto max-w-full rounded-sm"
+			class="w-full text-sm text-left text-gray-500 dark:text-gray-50 table-auto max-w-full rounded-sm"
 		>
 			<thead
-				class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-850 dark:text-gray-400 -translate-y-0.5"
+				class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-850 dark:text-gray-50 -translate-y-0.5"
 			>
 				<tr class="">
 					<th

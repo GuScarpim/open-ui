@@ -91,7 +91,7 @@
 								placement="top-start"
 								tippyOptions={{ duration: [500, 0] }}
 							>
-								<div class="text-sm dark:text-gray-400 flex items-center gap-2 w-fit">
+								<div class="text-sm dark:text-gray-50 flex items-center gap-2 w-fit">
 									<a
 										class="hover:text-gray-500 dark:hover:text-gray-100 underline grow"
 										href={document?.metadata?.file_id
@@ -104,7 +104,7 @@
 										{decodeString(document?.metadata?.name ?? document.source.name)}
 									</a>
 									{#if Number.isInteger(document?.metadata?.page)}
-										<span class="text-xs text-gray-500 dark:text-gray-400">
+										<span class="text-xs text-gray-500 dark:text-gray-50">
 											({$i18n.t('page')}
 											{document.metadata.page + 1})
 										</span>
@@ -130,7 +130,7 @@
 										placement="top-start"
 										tippyOptions={{ duration: [500, 0] }}
 									>
-										<div class="text-sm my-1 dark:text-gray-400 flex items-center gap-2 w-fit">
+										<div class="text-sm my-1 dark:text-gray-50 flex items-center gap-2 w-fit">
 											{#if showPercentage}
 												{@const percentage = calculatePercentage(document.distance)}
 
@@ -155,13 +155,13 @@
 										</div>
 									</Tooltip>
 								{:else}
-									<div class="text-sm dark:text-gray-400">
+									<div class="text-sm dark:text-gray-50">
 										{$i18n.t('No distance available')}
 									</div>
 								{/if}
 							{/if}
 						{:else}
-							<div class="text-sm dark:text-gray-400">
+							<div class="text-sm dark:text-gray-50">
 								{$i18n.t('No source available')}
 							</div>
 						{/if}
@@ -178,7 +178,7 @@
 								title={$i18n.t('Content')}
 							></iframe>
 						{:else}
-							<pre class="text-sm dark:text-gray-400 whitespace-pre-line">
+							<pre class="text-sm dark:text-gray-50 whitespace-pre-line">
                 {document.document}
               </pre>
 						{/if}
