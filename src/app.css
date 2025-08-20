@@ -637,3 +637,7 @@ body {
 	background: #1d2330;
 	color: #eee;
 }
+
+input, textarea {
+	@apply dark:placeholder:text-gray-600/70
+}

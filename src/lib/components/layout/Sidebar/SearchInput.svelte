@@ -309,7 +309,7 @@
 									{item.name}
 								</div>
 
-								<div class=" text-gray-500 line-clamp-1">
+								<div class=" text-gray-500 dark:text-gray-100/60 line-clamp-1">
 									{item.id}
 								</div>
 							</button>
@@ -343,7 +343,7 @@
 							>
 								<div class="dark:text-gray-300 text-gray-700 font-medium">{option.name}</div>
 
-								<div class=" text-gray-500 line-clamp-1">
+								<div class=" text-gray-500 dark:text-gray-100/60 line-clamp-1">
 									{option.description}
 								</div>
 							</button>
