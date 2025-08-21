@@ -10,7 +10,7 @@
 	export let readOnly = false;
 	export let outerClassName = 'flex flex-1 bg-transparent';
 	export let inputClassName = 'w-full text-sm py-0.5 bg-transparent';
-	export let showButtonClassName = 'pl-1.5  transition bg-transparent';
+	export let showButtonClassName = 'pl-1.5 transition bg-transparent text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100';
 
 	let show = false;
 </script>
