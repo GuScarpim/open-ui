@@ -57,6 +57,19 @@
 
 	export let toolServers = [];
 
+	let isDarkMode = document.documentElement.classList.contains('dark');
+
+	function updateDarkMode() {
+		isDarkMode = document.documentElement.classList.contains('dark');
+	}
+
+	onMount(() => {
+		const observer = new MutationObserver(updateDarkMode);
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+		return () => observer.disconnect();
+	});
+
 	let models = [];
 
 	let selectedModelIdx = 0;
@@ -123,14 +136,18 @@
 											selectedModelIdx = modelIdx;
 										}}
 									>
-										<div class="flex items-center justify-center w-25 h-12 @sm:w-30 @sm:h-18 overflow-hidden rounded-full border-[1px] border-gray-100 dark:border-none ">
+										<div class="flex items-center justify-center w-25 h-12 @sm:w-30 @sm:h-18 overflow-hidden">
 											<img
 												crossorigin="anonymous"
-												src={model?.info?.meta?.profile_image_url ??
+												src={
+													model?.info?.meta?.profile_image_url ??
 													($i18n.language === 'dg-DG'
 														? `${WEBUI_BASE_URL}/doge.png`
-														: `static/hubai-dark-logo.png`)}
-												class=" w-full border-[1px] border-gray-100 dark:border-none"
+														: isDarkMode
+															? `static/hubai-dark-logo.png`
+															: `static/hubai-light-logo.png`)
+												}
+												class="w-full"
 												aria-hidden="true"
 												draggable="false"
 											/>
