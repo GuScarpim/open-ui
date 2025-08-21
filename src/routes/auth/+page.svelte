@@ -135,19 +135,14 @@
 		if (logo) {
 			const isDarkMode = document.documentElement.classList.contains('dark');
 
-			if (isDarkMode) {
+				const darkLogoUrl = `/static/hubai-dark-logo.png`;
 				const darkImage = new Image();
-				darkImage.src = `/static/hubai-light-logo.png`;
+				darkImage.src = darkLogoUrl;
 
 				darkImage.onload = () => {
-					logo.src = `/static/hubai-dark-logo.png`;
-					logo.style.filter = ''; // Ensure no inversion is applied if favicon-dark.png exists
+					logo.src = darkLogoUrl;
+					logo.style.filter = '';
 				};
-
-				darkImage.onerror = () => {
-					logo.style.filter = 'invert(1)'; // Invert image if favicon-dark.png is missing
-				};
-			}
 		}
 	}
 
@@ -191,9 +186,6 @@
 
 
 	<!-- Simple sigin -->
-	<h1>Teste</h1>
-
-	
 
 	{#if loaded}
 		<div class="fixed flex justify-center items-center h-full w-full">
@@ -202,7 +194,9 @@
 				<img
 					id="logo"
 					crossorigin="anonymous"
-					src="{WEBUI_BASE_URL}/static/hubai-dark-logo.png"
+					src={document.documentElement.classList.contains('dark')
+						? `${WEBUI_BASE_URL}/static/hubai-dark-logo.png`
+						: `${WEBUI_BASE_URL}/static/hubai-light-logo.png`}
 					class="size-58 rounded-full mb-4"
 					alt="Logo"
 				/>
@@ -214,7 +208,7 @@
 					class="w-full px-8 flex flex-col gap-4"
 					on:submit|preventDefault={submitHandler}
 				>
-					<div class="text-xl font-semibold text-center mb-2 dark:text-gray-100">
+					<div class="text-xl font-semibold text-center mb-2 text-dark dark:text-gray-100">
 						{#if mode === 'ldap'}
 							{$i18n.t(`Sign in to {{WEBUI_NAME}} with LDAP`, { WEBUI_NAME: $WEBUI_NAME })}
 						{:else if mode === 'signin'}
