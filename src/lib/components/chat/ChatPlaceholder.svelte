@@ -20,6 +20,12 @@
 
 	export let onSelect = (e) => {};
 
+	let isDarkMode = document.documentElement.classList.contains('dark');
+
+	function updateDarkMode() {
+		isDarkMode = document.documentElement.classList.contains('dark');
+	}
+
 	let mounted = false;
 	let selectedModelIdx = 0;
 
@@ -31,6 +37,8 @@
 
 	onMount(() => {
 		mounted = true;
+		const observer = new MutationObserver(updateDarkMode);
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 	});
 </script>
 
@@ -52,16 +60,22 @@
 							)}
 							placement="right"
 						>
-							<img
-								crossorigin="anonymous"
-								src={model?.info?.meta?.profile_image_url ??
-									($i18n.language === 'dg-DG'
-										? `${WEBUI_BASE_URL}/doge.png`
-										: `${WEBUI_BASE_URL}/static/favicon.png`)}
-								class=" size-[2.7rem] rounded-full border-[1px] border-gray-100 dark:border-none"
-								alt="logo"
-								draggable="false"
-							/>
+							<div class="flex items-center justify-center w-25 h-12 @sm:w-30 @sm:h-18 overflow-hidden">
+								<img
+									crossorigin="anonymous"
+									src={
+										model?.info?.meta?.profile_image_url ??
+										($i18n.language === 'dg-DG'
+											? `${WEBUI_BASE_URL}/doge.png`
+											: isDarkMode
+												? `static/hubai-dark-logo.png`
+												: `static/hubai-light-logo.png`)
+									}
+									class="w-full"
+									aria-hidden="true"
+									draggable="false"
+								/>
+							</div>
 						</Tooltip>
 					</button>
 				{/each}

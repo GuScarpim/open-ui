@@ -166,7 +166,7 @@
 
 <svelte:head>
 	<title>
-		{`${$WEBUI_NAME}`}
+		{`${'AI HubOverlabs HUB AI'}`}
 	</title>
 </svelte:head>
 
@@ -190,16 +190,20 @@
 	{#if loaded}
 		<div class="fixed flex justify-center items-center h-full w-full">
 			<!-- Left column: Logo and color -->
-			<div class="flex flex-col justify-center items-center w-full max-w-md h-[480px] bg-[#004143] rounded-l-2xl">
-				<img
-					id="logo"
-					crossorigin="anonymous"
-					src={document.documentElement.classList.contains('dark')
-						? `${WEBUI_BASE_URL}/static/hubai-dark-logo.png`
-						: `${WEBUI_BASE_URL}/static/hubai-light-logo.png`}
-					class="size-58 rounded-full mb-4"
-					alt="Logo"
-				/>
+			<div class="flex flex-col pt-10 lg:pt-12 items-center w-full max-w-md h-[480px] bg-[#004143] rounded-l-2xl">
+				<div class="h-[200px] overflow-hidden">
+					<img
+						id="logo"
+						crossorigin="anonymous"
+						src={document.documentElement.classList.contains('dark')
+							? `${WEBUI_BASE_URL}/static/hubai-dark-logo.png`
+							: `${WEBUI_BASE_URL}/static/hubai-light-logo.png`}
+						class="size-80 rounded-full mb-4 object-cover"
+						alt="Logo"
+					/>
+				</div>
+				<img src="/static/overlabs-logo.png" class="w-[150px]" alt="Logo Overlabs">
+
 
 			</div>
 			<!-- Right column: Form -->
@@ -210,11 +214,11 @@
 				>
 					<div class="text-xl font-semibold text-center mb-2 text-dark dark:text-gray-100">
 						{#if mode === 'ldap'}
-							{$i18n.t(`Sign in to {{WEBUI_NAME}} with LDAP`, { WEBUI_NAME: $WEBUI_NAME })}
+							{$i18n.t(`Sign in to {{WEBUI_NAME}} with LDAP`, { WEBUI_NAME: 'Overlabs HUB AI' })}
 						{:else if mode === 'signin'}
-							{$i18n.t(`Sign in to {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
+							{$i18n.t(`Sign in to {{WEBUI_NAME}}`, { WEBUI_NAME: 'Overlabs HUB AI' })}
 						{:else}
-							{$i18n.t(`Sign up to {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
+							{$i18n.t(`Sign up to {{WEBUI_NAME}}`, { WEBUI_NAME: 'Overlabs HUB AI' })}
 						{/if}
 					</div>
 					{#if mode === 'signup'}
@@ -338,7 +342,7 @@
 							class="flex items-center justify-center gap-3 text-xl sm:text-2xl text-center font-semibold dark:text-gray-200"
 						>
 							<div>
-								{$i18n.t('Signing in to {{WEBUI_NAME}}', { WEBUI_NAME: $WEBUI_NAME })}
+								{$i18n.t('Signing in to {{WEBUI_NAME}}', { WEBUI_NAME: 'AI HubOverlabs HUB AI' })}
 							</div>
 
 							<div>
@@ -377,19 +381,19 @@
 								<div class="mb-1">
 									<div class=" text-2xl font-medium">
 										{#if $config?.onboarding ?? false}
-											{$i18n.t(`Get started with {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
+											{$i18n.t(`Get started with {{WEBUI_NAME}}`, { WEBUI_NAME: 'AI HubOverlabs HUB AI' })}
 										{:else if mode === 'ldap'}
-											{$i18n.t(`Sign in to {{WEBUI_NAME}} with LDAP`, { WEBUI_NAME: $WEBUI_NAME })}
+											{$i18n.t(`Sign in to {{WEBUI_NAME}} with LDAP`, { WEBUI_NAME: 'AI HubOverlabs HUB AI' })}
 										{:else if mode === 'signin'}
-											{$i18n.t(`Sign in to {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
+											{$i18n.t(`Sign in to {{WEBUI_NAME}}`, { WEBUI_NAME: 'AI HubOverlabs HUB AI' })}
 										{:else}
-											{$i18n.t(`Sign up to {{WEBUI_NAME}}`, { WEBUI_NAME: $WEBUI_NAME })}
+											{$i18n.t(`Sign up to {{WEBUI_NAME}}`, { WEBUI_NAME: 'AI HubOverlabs HUB AI' })}
 										{/if}
 									</div>
 
 									{#if $config?.onboarding ?? false}
 										<div class="mt-1 text-xs font-medium text-gray-600 dark:text-gray-500">
-											ⓘ {$WEBUI_NAME}
+											ⓘ {'AI HubOverlabs HUB AI'}
 											{$i18n.t(
 												'does not make any external connections, and your data stays securely on your locally hosted server.'
 											)}
@@ -697,7 +701,7 @@
 						<img
 							id="logo"
 							crossorigin="anonymous"
-							src="{WEBUI_BASE_URL}/static/favicon.png"
+							src="{WEBUI_BASE_URL}"
 							class=" w-6 rounded-full"
 							alt=""
 						/>

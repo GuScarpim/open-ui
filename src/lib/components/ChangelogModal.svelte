@@ -28,7 +28,8 @@
 		<div class="flex justify-between items-start">
 			<div class="text-xl font-semibold">
 				{$i18n.t("What's New in")}
-				{$WEBUI_NAME}
+				<!-- {'Hub AI'} -->
+				 Hub AI
 				<Confetti x={[-1, -0.25]} y={[0, 0.5]} />
 			</div>
 			<button

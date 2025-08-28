@@ -174,7 +174,7 @@
 
 <svelte:head>
 	<title>
-		{$i18n.t('Tools')} • {$WEBUI_NAME}
+		{$i18n.t('Tools')} • {'Hub AI'}
 	</title>
 </svelte:head>
 

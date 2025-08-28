@@ -136,7 +136,7 @@
 											selectedModelIdx = modelIdx;
 										}}
 									>
-										<div class="flex items-center justify-center w-25 h-12 @sm:w-30 @sm:h-18 overflow-hidden">
+										<div class="flex items-center justify-center w-25 h-12 @sm:w-36 @sm:h-18 overflow-hidden">
 											<img
 												crossorigin="anonymous"
 												src={
@@ -159,7 +159,6 @@
 					</div>
 
 					<div
-						class=" text-3xl @sm:text-3xl line-clamp-1 flex items-center"
 						in:fade={{ duration: 100 }}
 					>
 						{#if models[selectedModelIdx]?.name}
