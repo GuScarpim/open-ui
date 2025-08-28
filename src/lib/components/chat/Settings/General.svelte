@@ -240,7 +240,7 @@
 				<div
 					class="mb-2 text-xs {($settings?.highContrastMode ?? false)
 						? 'text-gray-800 dark:text-gray-100'
-						: 'text-gray-400 dark:text-gray-500'}"
+						: 'text-gray-400 dark:text-gray-300'}"
 				>
 					Couldn't find your language?
 					<a
@@ -300,7 +300,7 @@
 					<button
 						class=" text-xs font-medium {($settings?.highContrastMode ?? false)
 							? 'text-gray-800 dark:text-gray-100'
-							: 'text-gray-400 dark:text-gray-500'}"
+							: 'text-gray-400 dark:text-gray-300'}"
 						type="button"
 						on:click={() => {
 							showAdvanced = !showAdvanced;

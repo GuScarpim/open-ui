@@ -154,7 +154,7 @@
 								</div>
 
 								<button
-									class=" underline flex items-center space-x-1 text-xs text-gray-500 dark:text-gray-500"
+									class=" underline flex items-center space-x-1 text-xs text-gray-500 dark:text-gray-300"
 									type="button"
 									on:click={() => {
 										showChangelog.set(true);
@@ -365,7 +365,7 @@
 									bind:value={adminConfig.API_KEY_ALLOWED_ENDPOINTS}
 								/>
 
-								<div class="mt-2 text-xs text-gray-400 dark:text-gray-500">
+								<div class="mt-2 text-xs text-gray-400 dark:text-gray-300">
 									<!-- https://docs.openwebui.com/getting-started/advanced-topics/api-endpoints -->
 									<a
 										href="https://docs.openwebui.com/getting-started/api-endpoints"
@@ -393,7 +393,7 @@
 							/>
 						</div>
 
-						<div class="mt-2 text-xs text-gray-400 dark:text-gray-500">
+						<div class="mt-2 text-xs text-gray-400 dark:text-gray-300">
 							{$i18n.t('Valid time units:')}
 							<span class=" text-gray-300 font-medium"
 								>{$i18n.t("'s', 'm', 'h', 'd', 'w' or '-1' for no expiration.")}</span
@@ -556,7 +556,7 @@
 											/>
 										</div>
 									</div>
-									<div class="text-xs text-gray-400 dark:text-gray-500">
+									<div class="text-xs text-gray-400 dark:text-gray-300">
 										<a
 											class=" text-gray-300 font-medium underline"
 											href="https://ldap.com/ldap-filters/"
@@ -683,7 +683,7 @@
 							/>
 						</div>
 
-						<div class="mt-2 text-xs text-gray-400 dark:text-gray-500">
+						<div class="mt-2 text-xs text-gray-400 dark:text-gray-300">
 							{$i18n.t(
 								'Enter the public URL of your WebUI. This URL will be used to generate links in the notifications.'
 							)}

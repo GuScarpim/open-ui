@@ -921,7 +921,7 @@
 					}}
 				>
 					{#if $pinnedChats.length > 0}
-						<div class="flex flex-col space-y-1 rounded-xl">
+						<div class="flex flex-col space-y-1 rounded-xl ">
 							<Folder
 								className=""
 								bind:open={showPinnedChat}
@@ -1031,7 +1031,7 @@
 								{#each $chats as chat, idx (`chat-${chat?.id ?? idx}`)}
 									{#if idx === 0 || (idx > 0 && chat.time_range !== $chats[idx - 1].time_range)}
 										<div
-											class="w-full pl-2.5 text-xs text-gray-500 dark:text-gray-500 font-medium {idx ===
+											class="w-full pl-2.5 text-xs text-gray-500 dark:text-gray-300 font-medium {idx ===
 											0
 												? ''
 												: 'pt-5'} pb-1.5"

@@ -860,7 +860,7 @@
 							class="px-3 pb-0.5 pt-1.5 text-left w-full flex flex-col absolute bottom-0 left-0 right-0 bg-linear-to-t from-white dark:from-gray-900 z-10"
 						>
 							<div class="flex items-center justify-between w-full">
-								<div class="pl-[1px] flex items-center gap-2 text-sm dark:text-gray-500">
+								<div class="pl-[1px] flex items-center gap-2 text-sm dark:text-gray-300">
 									<img
 										crossorigin="anonymous"
 										alt="model profile"
@@ -869,7 +869,7 @@
 											?.profile_image_url ??
 											($i18n.language === 'dg-DG'
 												? `${WEBUI_BASE_URL}/doge.png`
-												: `$/static/favicon.png`)}
+												: `/static/favicon.png`)}
 									/>
 									<div class="translate-y-[0.5px]">
 										Talking to <span class=" font-medium">{atSelectedModel.name}</span>
@@ -877,7 +877,7 @@
 								</div>
 								<div>
 									<button
-										class="flex items-center dark:text-gray-500"
+										class="flex items-center dark:text-gray-300"
 										on:click={() => {
 											atSelectedModel = undefined;
 										}}

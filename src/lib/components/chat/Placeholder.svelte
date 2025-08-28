@@ -83,7 +83,7 @@
 	onMount(() => {});
 </script>
 
-<div class="m-auto w-full max-w-6xl px-2 @2xl:px-20 translate-y-6 py-24 text-center">
+<div class="mx-auto w-full max-w-6xl px-2 @2xl:px-20 translate-y-6 py-24 text-center">
 	{#if $temporaryChatEnabled}
 		<Tooltip
 			content={$i18n.t("This chat won't appear in history and your messages will not be saved.")}
@@ -118,6 +118,25 @@
 				/>
 			{:else}
 				<div class="flex flex-col justify-center gap-3 @sm:gap-3.5 w-fit px-5 max-w-xl">
+					<div class="flex items-center justify-center w-25 h-12 @sm:w-36 @sm:h-18 overflow-hidden">
+						<img
+							crossorigin="anonymous"
+							src={
+								($i18n.language === 'dg-DG'
+									? `${WEBUI_BASE_URL}/doge.png`
+									: isDarkMode
+										? `static/hubai-dark-logo.png`
+										: `static/hubai-light-logo.png`)
+							}
+							class="w-full"
+							aria-hidden="true"
+							draggable="false"
+						/>
+					</div>
+
+				</div>
+
+				<div class="flex flex-row justify-center gap-3 @sm:gap-3.5 w-fit px-5 max-w-xl">
 					<div class="flex shrink-0 justify-center">
 						<div class="flex -space-x-4 mb-0.5" in:fade={{ duration: 100 }}>
 							{#each models as model, modelIdx}
@@ -136,29 +155,33 @@
 											selectedModelIdx = modelIdx;
 										}}
 									>
-										<div class="flex items-center justify-center w-25 h-12 @sm:w-36 @sm:h-18 overflow-hidden">
+
+										{#if model?.info?.meta?.profile_image_url}
 											<img
 												crossorigin="anonymous"
-												src={
-													model?.info?.meta?.profile_image_url ??
-													($i18n.language === 'dg-DG'
-														? `${WEBUI_BASE_URL}/doge.png`
-														: isDarkMode
-															? `static/hubai-dark-logo.png`
-															: `static/hubai-light-logo.png`)
-												}
-												class="w-full"
+												src={model.info.meta.profile_image_url}
+												class="size-9 @sm:size-10 rounded-full border-[1px] border-gray-100 dark:border-none"
 												aria-hidden="true"
 												draggable="false"
 											/>
-										</div>
+										{:else}
+											<!-- Fallback: ícone ou iniciais -->
+											<div
+												class="size-9 @sm:size-10 rounded-full bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-xs font-semibold text-gray-600 dark:text-gray-200 border border-gray-100 dark:border-none"
+												aria-hidden="true"
+											>
+												{model?.name?.substring(0, 3) ?? '?'}
+											</div>
+										{/if}
 									</button>
 								</Tooltip>
 							{/each}
+
 						</div>
 					</div>
 
 					<div
+						class=" text-3xl @sm:text-3xl line-clamp-1 flex items-center"
 						in:fade={{ duration: 100 }}
 					>
 						{#if models[selectedModelIdx]?.name}
@@ -176,6 +199,8 @@
 						{/if}
 					</div>
 				</div>
+
+				
 
 				<div class="flex mt-1 mb-2">
 					<div in:fade={{ duration: 100, delay: 50 }}>
@@ -201,7 +226,7 @@
 							</Tooltip>
 
 							{#if models[selectedModelIdx]?.info?.meta?.user}
-								<div class="mt-0.5 text-sm font-normal text-gray-400 dark:text-gray-500">
+								<div class="mt-0.5 text-sm font-normal text-gray-400 dark:text-gray-300">
 									By
 									{#if models[selectedModelIdx]?.info?.meta?.user.community}
 										<a

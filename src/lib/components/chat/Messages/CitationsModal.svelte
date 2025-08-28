@@ -143,12 +143,12 @@
 												{/if}
 
 												{#if typeof document?.distance === 'number'}
-													<span class="text-gray-500 dark:text-gray-500">
+													<span class="text-gray-500 dark:text-gray-300">
 														({(document?.distance ?? 0).toFixed(4)})
 													</span>
 												{/if}
 											{:else if typeof document?.distance === 'number'}
-												<span class="text-gray-500 dark:text-gray-500">
+												<span class="text-gray-500 dark:text-gray-300">
 													({(document?.distance ?? 0).toFixed(4)})
 												</span>
 											{/if}

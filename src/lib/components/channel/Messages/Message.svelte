@@ -146,7 +146,7 @@
 							src={message.user?.profile_image_url ??
 								($i18n.language === 'dg-DG'
 									? `${WEBUI_BASE_URL}/doge.png`
-									: `$/static/favicon.png`)}
+									: `/static/favicon.png`)}
 							className={'size-8 translate-y-1 ml-0.5'}
 						/>
 					</ProfilePreview>
@@ -174,7 +174,7 @@
 
 						{#if message.created_at}
 							<div
-								class=" self-center text-xs invisible group-hover:visible text-gray-400 font-medium first-letter:capitalize ml-0.5 translate-y-[1px]"
+								class=" self-center text-xs invisible group-hover:visible text-gray-400 dark:text-gray-300 font-medium first-letter:capitalize ml-0.5 translate-y-[1px]"
 							>
 								<Tooltip content={dayjs(message.created_at / 1000000).format('LLLL')}>
 									<span class="line-clamp-1">{formatDate(message.created_at / 1000000)}</span>

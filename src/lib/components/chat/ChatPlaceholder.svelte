@@ -118,7 +118,7 @@
 							)}
 						</div>
 						{#if models[selectedModelIdx]?.info?.meta?.user}
-							<div class="mt-0.5 text-sm font-normal text-gray-400 dark:text-gray-500">
+							<div class="mt-0.5 text-sm font-normal text-gray-400 dark:text-gray-300">
 								By
 								{#if models[selectedModelIdx]?.info?.meta?.user.community}
 									<a
@@ -134,7 +134,7 @@
 							</div>
 						{/if}
 					{:else}
-						<div class=" font-medium text-gray-400 dark:text-gray-500 line-clamp-1 font-p">
+						<div class=" font-medium text-gray-400 dark:text-gray-300 line-clamp-1 font-p">
 							{$i18n.t('How can I help you today?')}
 						</div>
 					{/if}

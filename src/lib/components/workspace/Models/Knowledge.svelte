@@ -162,7 +162,7 @@
 				</div>
 			</div>
 
-			<div class=" text-xs dark:text-gray-500">
+			<div class=" text-xs dark:text-gray-300">
 				{$i18n.t('To attach knowledge base here, add them to the "Knowledge" workspace first.')}
 			</div>
 		</div>

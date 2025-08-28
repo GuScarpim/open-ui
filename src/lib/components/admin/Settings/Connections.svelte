@@ -344,7 +344,7 @@
 								</div>
 							</div>
 
-							<div class="mt-1 text-xs text-gray-400 dark:text-gray-500">
+							<div class="mt-1 text-xs text-gray-400 dark:text-gray-300">
 								{$i18n.t('Trouble accessing Ollama?')}
 								<a
 									class=" text-gray-300 font-medium underline"
@@ -374,7 +374,7 @@
 						</div>
 					</div>
 
-					<div class="mt-1 text-xs text-gray-400 dark:text-gray-500">
+					<div class="mt-1 text-xs text-gray-400 dark:text-gray-300">
 						{$i18n.t(
 							'Direct Connections allow users to connect to their own OpenAI compatible API endpoints.'
 						)}
@@ -399,7 +399,7 @@
 						</div>
 					</div>
 
-					<div class="mt-1 text-xs text-gray-400 dark:text-gray-500">
+					<div class="mt-1 text-xs text-gray-400 dark:text-gray-300">
 						{$i18n.t(
 							'Base Model List Cache speeds up access by fetching base models only at startup or on settings save—faster, but may not show recent base model changes.'
 						)}

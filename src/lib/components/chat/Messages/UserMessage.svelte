@@ -141,7 +141,7 @@
 
 					{#if message.timestamp}
 						<div
-							class=" self-center text-xs invisible group-hover:visible text-gray-400 font-medium first-letter:capitalize ml-0.5 translate-y-[1px]"
+							class=" self-center text-xs invisible group-hover:visible text-gray-400 dark:text-gray-300 font-medium first-letter:capitalize ml-0.5 translate-y-[1px]"
 						>
 							<Tooltip content={dayjs(message.timestamp * 1000).format('LLLL')}>
 								<span class="line-clamp-1">{formatDate(message.timestamp * 1000)}</span>
@@ -327,7 +327,7 @@
 						<div
 							class=" flex {($settings?.chatBubble ?? true)
 								? 'justify-end'
-								: ''}  text-gray-600 dark:text-gray-500"
+								: ''}  text-gray-600 dark:text-gray-300"
 						>
 							{#if !($settings?.chatBubble ?? true)}
 								{#if siblings.length > 1}

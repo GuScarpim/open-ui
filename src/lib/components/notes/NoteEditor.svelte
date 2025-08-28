@@ -1138,7 +1138,7 @@ Provide the enhanced notes in markdown format. Use markdown syntax for headings,
 							}}
 						>
 							<div
-								class="flex gap-1 items-center text-xs font-medium text-gray-500 dark:text-gray-500 w-fit"
+								class="flex gap-1 items-center text-xs font-medium text-gray-500 dark:text-gray-300 w-fit"
 							>
 								<button class=" flex items-center gap-1 w-fit py-1 px-1.5 rounded-lg min-w-fit">
 									<Calendar className="size-3.5" strokeWidth="2" />

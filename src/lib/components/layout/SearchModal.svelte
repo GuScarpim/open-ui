@@ -266,7 +266,7 @@
 					{#each chatList as chat, idx (chat.id)}
 						{#if idx === 0 || (idx > 0 && chat.time_range !== chatList[idx - 1].time_range)}
 							<div
-								class="w-full text-xs text-gray-500 dark:text-gray-500 font-medium {idx === 0
+								class="w-full text-xs text-gray-500 dark:text-gray-300 font-medium {idx === 0
 									? ''
 									: 'pt-5'} pb-2 px-2"
 							>

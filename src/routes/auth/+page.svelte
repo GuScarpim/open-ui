@@ -166,7 +166,7 @@
 
 <svelte:head>
 	<title>
-		{`${'AI HubOverlabs HUB AI'}`}
+		{`${'Overlabs HUB AI'}`}
 	</title>
 </svelte:head>
 
@@ -392,7 +392,7 @@
 									</div>
 
 									{#if $config?.onboarding ?? false}
-										<div class="mt-1 text-xs font-medium text-gray-600 dark:text-gray-500">
+										<div class="mt-1 text-xs font-medium text-gray-600 dark:text-gray-300">
 											ⓘ {'AI HubOverlabs HUB AI'}
 											{$i18n.t(
 												'does not make any external connections, and your data stays securely on your locally hosted server.'

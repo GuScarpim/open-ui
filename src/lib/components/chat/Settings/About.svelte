@@ -75,7 +75,7 @@
 					</div>
 
 					<button
-						class=" underline flex items-center space-x-1 text-xs text-gray-500 dark:text-gray-500"
+						class=" underline flex items-center space-x-1 text-xs text-gray-500 dark:text-gray-300"
 						on:click={() => {
 							showChangelog.set(true);
 						}}
@@ -146,7 +146,7 @@
 			</div>
 		{/if}
 
-		<div class="mt-2 text-xs text-gray-400 dark:text-gray-500">
+		<div class="mt-2 text-xs text-gray-400 dark:text-gray-300">
 			Emoji graphics provided by
 			<a href="https://github.com/jdecked/twemoji" target="_blank">Twemoji</a>, licensed under
 			<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC-BY 4.0</a>.
@@ -154,7 +154,7 @@
 
 		<div>
 			<pre
-				class="text-xs text-gray-400 dark:text-gray-500">Copyright (c) {new Date().getFullYear()} <a
+				class="text-xs text-gray-400 dark:text-gray-300">Copyright (c) {new Date().getFullYear()} <a
 					href="https://overlabs.com"
 					target="_blank"
 					class="underline">Overlabs Hub AI</a
@@ -194,7 +194,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 </pre>
 		</div>
 
-		<div class="mt-2 text-xs text-gray-400 dark:text-gray-500">
+		<div class="mt-2 text-xs text-gray-400 dark:text-gray-300">
 			{$i18n.t('Created by')}
 			<a
 				class=" text-gray-500 dark:text-gray-300 font-medium"

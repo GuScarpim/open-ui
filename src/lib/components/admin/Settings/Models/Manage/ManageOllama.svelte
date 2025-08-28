@@ -660,7 +660,7 @@
 						</button>
 					</div>
 
-					<div class="mt-2 mb-1 text-xs text-gray-400 dark:text-gray-500">
+					<div class="mt-2 mb-1 text-xs text-gray-400 dark:text-gray-300">
 						{$i18n.t('To access the available model names for downloading,')}
 						<a
 							class=" text-gray-500 dark:text-gray-300 font-medium underline"
@@ -722,7 +722,7 @@
 											</Tooltip>
 										</div>
 										{#if 'digest' in $MODEL_DOWNLOAD_POOL[model]}
-											<div class="mt-1 text-xs dark:text-gray-500" style="font-size: 0.5rem;">
+											<div class="mt-1 text-xs dark:text-gray-300" style="font-size: 0.5rem;">
 												{$MODEL_DOWNLOAD_POOL[model].digest}
 											</div>
 										{/if}
@@ -838,7 +838,7 @@
 									</div>
 								</div>
 								{#if createModelDigest}
-									<div class="mt-1 text-xs dark:text-gray-500" style="font-size: 0.5rem;">
+									<div class="mt-1 text-xs dark:text-gray-300" style="font-size: 0.5rem;">
 										{createModelDigest}
 									</div>
 								{/if}
@@ -1004,7 +1004,7 @@
 								</div>
 							</div>
 						{/if}
-						<div class=" mt-1 text-xs text-gray-400 dark:text-gray-500">
+						<div class=" mt-1 text-xs text-gray-400 dark:text-gray-300">
 							{$i18n.t('To access the GGUF models available for downloading,')}
 							<a
 								class=" text-gray-500 dark:text-gray-300 font-medium underline"
@@ -1025,7 +1025,7 @@
 										{uploadMessage}
 									</div>
 								</div>
-								<div class="mt-1 text-xs dark:text-gray-500" style="font-size: 0.5rem;">
+								<div class="mt-1 text-xs dark:text-gray-300" style="font-size: 0.5rem;">
 									{modelFileDigest}
 								</div>
 							</div>
@@ -1041,7 +1041,7 @@
 										{uploadProgress ?? 0}%
 									</div>
 								</div>
-								<div class="mt-1 text-xs dark:text-gray-500" style="font-size: 0.5rem;">
+								<div class="mt-1 text-xs dark:text-gray-300" style="font-size: 0.5rem;">
 									{modelFileDigest}
 								</div>
 							</div>

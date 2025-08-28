@@ -610,7 +610,7 @@
 				src={model?.info?.meta?.profile_image_url ??
 					($i18n.language === 'dg-DG'
 						? `${WEBUI_BASE_URL}/doge.png`
-						: `${WEBUI_BASE_URL}/favicon.png`)}
+						: `/favicon.png`)}
 				className={'size-8 assistant-message-profile-image'}
 			/>
 		</div>
@@ -625,7 +625,7 @@
 
 				{#if message.timestamp}
 					<div
-						class=" self-center text-xs invisible group-hover:visible text-gray-400 font-medium first-letter:capitalize ml-0.5 translate-y-[1px]"
+						class=" self-center text-xs invisible group-hover:visible text-gray-400 dark:text-gray-300 font-medium first-letter:capitalize ml-0.5 translate-y-[1px]"
 					>
 						<Tooltip content={dayjs(message.timestamp * 1000).format('LLLL')}>
 							<span class="line-clamp-1">{formatDate(message.timestamp * 1000)}</span>
@@ -674,7 +674,7 @@
 											<div
 												class="{status?.done === false
 													? 'shimmer'
-													: ''} text-gray-500 dark:text-gray-500 text-base line-clamp-1 text-wrap"
+													: ''} text-gray-500 dark:text-gray-300 text-base line-clamp-1 text-wrap"
 											>
 												{$i18n.t(`Searching Knowledge for "{{searchQuery}}"`, {
 													searchQuery: status.query
@@ -686,7 +686,7 @@
 											<div
 												class="{status?.done === false
 													? 'shimmer'
-													: ''} text-gray-500 dark:text-gray-500 text-base line-clamp-1 text-wrap"
+													: ''} text-gray-500 dark:text-gray-300 text-base line-clamp-1 text-wrap"
 											>
 												<!-- $i18n.t(`Searching "{{searchQuery}}"`) -->
 												{#if status?.description.includes('{{searchQuery}}')}
@@ -877,7 +877,7 @@
 				{#if !edit}
 					<div
 						bind:this={buttonsContainerElement}
-						class="flex justify-start overflow-x-auto buttons text-gray-600 dark:text-gray-500 mt-0.5"
+						class="flex justify-start overflow-x-auto buttons text-gray-600 dark:text-gray-300 mt-0.5"
 					>
 						{#if message.done || siblings.length > 1}
 							{#if siblings.length > 1}

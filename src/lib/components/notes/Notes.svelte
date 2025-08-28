@@ -365,7 +365,7 @@
 			{#if Object.keys(notes).length > 0}
 				<div class="pb-10">
 					{#each Object.keys(notes) as timeRange}
-						<div class="w-full text-xs text-gray-500 dark:text-gray-500 font-medium pb-2.5">
+						<div class="w-full text-xs text-gray-500 dark:text-gray-300 font-medium pb-2.5">
 							{$i18n.t(timeRange)}
 						</div>
 
@@ -418,7 +418,7 @@
 												</div>
 
 												<div
-													class=" text-xs text-gray-500 dark:text-gray-500 mb-3 line-clamp-3 min-h-10"
+													class=" text-xs text-gray-500 dark:text-gray-300 mb-3 line-clamp-3 min-h-10"
 												>
 													{#if note.data?.content?.md}
 														{note.data?.content?.md}
@@ -437,7 +437,7 @@
 													className="flex shrink-0"
 													placement="top-start"
 												>
-													<div class="shrink-0 text-gray-500">
+													<div class="shrink-0 text-gray-500 dark:text-gray-300">
 														{$i18n.t('By {{name}}', {
 															name: capitalizeFirstLetter(
 																note?.user?.name ?? note?.user?.email ?? $i18n.t('Deleted User')
