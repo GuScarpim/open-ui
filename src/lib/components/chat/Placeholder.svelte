@@ -26,6 +26,7 @@
 	import FolderPlaceholder from './Placeholder/FolderPlaceholder.svelte';
 	import FolderTitle from './Placeholder/FolderTitle.svelte';
 	import { getChatList } from '$lib/apis/chats';
+	import { getModelIcon } from '$lib/utils/ai-models-utils';
 
 	const i18n = getContext('i18n');
 
@@ -156,10 +157,10 @@
 										}}
 									>
 
-										{#if model?.info?.meta?.profile_image_url}
+										{#if (model?.info?.meta?.profile_image_url || getModelIcon(model?.name))}
 											<img
 												crossorigin="anonymous"
-												src={model.info.meta.profile_image_url}
+												src={model?.info?.meta?.profile_image_url ?? getModelIcon(model?.name)}
 												class="size-9 @sm:size-10 rounded-full border-[1px] border-gray-100 dark:border-none"
 												aria-hidden="true"
 												draggable="false"

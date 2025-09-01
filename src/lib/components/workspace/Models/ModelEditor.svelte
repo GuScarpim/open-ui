@@ -20,6 +20,7 @@
 	import Spinner from '$lib/components/common/Spinner.svelte';
 	import XMark from '$lib/components/icons/XMark.svelte';
 	import { getNoteList } from '$lib/apis/notes';
+	import { getModelIcon } from '$lib/utils/ai-models-utils';
 
 	const i18n = getContext('i18n');
 
@@ -363,6 +364,10 @@
 						// Display the compressed image
 						info.meta.profile_image_url = compressedSrc;
 
+						if(!info?.meta?.profile_image_url) {
+							info?.meta?.profile_image_url = getModelIcon(info?.name ?? info?.meta?.name)
+						}
+
 						inputFiles = null;
 						filesInputElement.value = '';
 					};
@@ -446,7 +451,7 @@
 							<button
 								class="px-2 py-1 text-gray-500 rounded-lg text-xs"
 								on:click={() => {
-									info.meta.profile_image_url = `/static/favicon.png`;
+									info.meta.profile_image_url = getModelIcon(info.name);
 								}}
 								type="button"
 							>

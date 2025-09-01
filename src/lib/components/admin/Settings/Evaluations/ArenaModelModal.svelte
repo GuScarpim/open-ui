@@ -14,6 +14,7 @@
 	import ConfirmDialog from '$lib/components/common/ConfirmDialog.svelte';
 	import XMark from '$lib/components/icons/XMark.svelte';
 	import { WEBUI_BASE_URL } from '$lib/constants';
+	import { getModelIcon } from '$lib/utils/ai-models-utils';
 
 	export let show = false;
 	export let edit = false;
@@ -103,7 +104,7 @@
 		if (model) {
 			name = model.name;
 			id = model.id;
-			profileImageUrl = model.meta.profile_image_url;
+			profileImageUrl = model?.meta?.profile_imageurl ?? getModelIcon(model?.name);
 			description = model.meta.description;
 			modelIds = model.meta.model_ids || [];
 			filterMode = model.meta?.filter_mode ?? 'include';

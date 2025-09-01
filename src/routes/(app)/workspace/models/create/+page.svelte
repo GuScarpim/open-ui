@@ -10,6 +10,7 @@
 	import { getModels } from '$lib/apis';
 
 	import ModelEditor from '$lib/components/workspace/Models/ModelEditor.svelte';
+	import { getModelIcon } from '$lib/utils/ai-models-utils';
 
 	const i18n = getContext('i18n');
 
@@ -32,7 +33,7 @@
 				meta: {
 					...modelInfo.meta,
 					profile_image_url:
-						modelInfo.meta.profile_image_url ?? `/static/favicon.png`,
+						modelInfo.meta.profile_image_url ?? getModelIcon(modelInfo?.name),
 					suggestion_prompts: modelInfo.meta.suggestion_prompts
 						? modelInfo.meta.suggestion_prompts.filter((prompt) => prompt.content !== '')
 						: null

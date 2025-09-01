@@ -16,6 +16,7 @@
 	import { toast } from 'svelte-sonner';
 	import Tag from '$lib/components/icons/Tag.svelte';
 	import Label from '$lib/components/icons/Label.svelte';
+	import { getModelIcon } from '$lib/utils/ai-models-utils';
 
 	const i18n = getContext('i18n');
 
@@ -77,8 +78,7 @@
 			<div class="flex items-center min-w-fit">
 				<Tooltip content={$user?.role === 'admin' ? (item?.value ?? '') : ''} placement="top-start">
 					<img
-						src={item.model?.info?.meta?.profile_image_url ??
-							`/static/favicon.png`}
+						src={item?.model?.info?.meta?.profile_image_url ?? getModelIcon(item.label)}
 						alt="Model"
 						class="rounded-full size-5 flex items-center"
 					/>
