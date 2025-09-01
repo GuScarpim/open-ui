@@ -15,7 +15,7 @@ HUB AI é um projeto baseado no open source [Open Web UI](https://github.com/ope
 ### Pré-requisitos
 
 * Node.js **v24.5.0**
-* Python
+* Python **v3.11.0**
 * Docker (se for rodar com Ollama)
 
 ### Passos
