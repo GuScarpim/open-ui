@@ -56,19 +56,21 @@ npm install \
 pip install open-webui
 ```
 
-3. Rodar o servidor do Open Web UI:
+3. Criar envs no seu local (A partir de env.example:
+
+4. Rodar o servidor do Open Web UI:
 
 ```bash
 open-webui serve
 ```
 
-4. Rodar Ollama via Docker:
+5. Rodar Ollama via Docker:
 
 ```bash
 docker-compose up ollama
 ```
 
-5. Rodar front-end em modo desenvolvimento:
+6. Rodar front-end em modo desenvolvimento:
 
 ```bash
 npm run dev
