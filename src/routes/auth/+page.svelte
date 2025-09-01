@@ -135,7 +135,7 @@
 		if (logo) {
 			const isDarkMode = document.documentElement.classList.contains('dark');
 
-				const darkLogoUrl = `/static/hubai-dark-logo.png`;
+				const darkLogoUrl = `/static/dark-logo.png`;
 				const darkImage = new Image();
 				darkImage.src = darkLogoUrl;
 
@@ -196,8 +196,8 @@
 						id="logo"
 						crossorigin="anonymous"
 						src={document.documentElement.classList.contains('dark')
-							? `${WEBUI_BASE_URL}/static/hubai-dark-logo.png`
-							: `${WEBUI_BASE_URL}/static/hubai-light-logo.png`}
+							? `${WEBUI_BASE_URL}/static/dark-logo.png`
+							: `${WEBUI_BASE_URL}/static/light-logo.png`}
 						class="size-80 rounded-full mb-4 object-cover"
 						alt="Logo"
 					/>
@@ -358,14 +358,14 @@
 									<img
 										id="logo"
 										crossorigin="anonymous"
-										src="{WEBUI_BASE_URL}/static/hubai-dark-logo.png"
+										src="{WEBUI_BASE_URL}/static/dark-logo.png"
 										class="size-24 rounded-full"
 										alt=""
 									/>
 									<img
 										id="logo"
 										crossorigin="anonymous"
-										src="/static/hubai-dark-logo.png"
+										src="/static/dark-logo.png"
 										class="size-24 rounded-full"
 										alt=""
 									/>

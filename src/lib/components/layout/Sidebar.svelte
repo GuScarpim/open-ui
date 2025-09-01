@@ -533,7 +533,7 @@
 						<div class=" self-center flex items-center justify-center size-9">
 							<img
 								crossorigin="anonymous"
-								src={isDarkMode ? "/static/hubai-dark-logo.png" : "/static/hubai-light-logo.png"}
+								src={isDarkMode ? "/static/dark-logo.png" : "/static/light-logo.png"}
 								class="sidebar-new-chat-icon  rounded-full group-hover:hidden "
 								alt=""
 							/>
@@ -708,7 +708,7 @@
 					<div class=" w-23 h-12 rounded-full overflow-hidden flex items-center justify-center">
 						<img
 							crossorigin="anonymous"
-							src={isDarkMode ? "/static/hubai-dark-logo.png" : "/static/hubai-light-logo.png"}
+							src={isDarkMode ? "/static/dark-logo.png" : "/static/light-logo.png"}
 							class="object-cover w-full h-full"
 							alt=""
 						/>

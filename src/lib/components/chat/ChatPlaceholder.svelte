@@ -68,8 +68,8 @@
 										($i18n.language === 'dg-DG'
 											? `${WEBUI_BASE_URL}/doge.png`
 											: isDarkMode
-												? `static/hubai-dark-logo.png`
-												: `static/hubai-light-logo.png`)
+												? `static/dark-logo.png`
+												: `static/light-logo.png`)
 									}
 									class="w-full"
 									aria-hidden="true"
