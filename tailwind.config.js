@@ -9,8 +9,8 @@ export default {
 		extend: {
 			colors: {
 				// Cores principais
-				primary: '#00beb2',
-				secondary: '#78DBBA',
+				primary: '#C8102E',
+				secondary: '#FFFFFF',
 				tertiary: '#2F3342',
 				// Sistema de cores
 				blue: '#1761FD',
