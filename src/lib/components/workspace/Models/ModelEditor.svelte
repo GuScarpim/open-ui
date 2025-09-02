@@ -364,9 +364,9 @@
 						// Display the compressed image
 						info.meta.profile_image_url = compressedSrc;
 
-						if(!info?.meta?.profile_image_url) {
-							info?.meta?.profile_image_url = getModelIcon(info?.name ?? info?.meta?.name)
-						}
+						info.meta = info.meta || {};
+						info.meta.profile_image_url = info.meta.profile_image_url 
+						|| getModelIcon(info.name ?? info.meta.name);
 
 						inputFiles = null;
 						filesInputElement.value = '';
