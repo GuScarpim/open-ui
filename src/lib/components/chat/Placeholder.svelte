@@ -118,15 +118,15 @@
 				/>
 			{:else}
 				<div class="flex flex-col justify-center gap-3 @sm:gap-3.5 w-fit px-5 max-w-xl">
-					<div class="flex items-center justify-center w-25 h-12 @sm:w-36 @sm:h-18 overflow-hidden">
+					<div class="flex items-center justify-center w-25 h-12 @sm:w-70 @sm:h-18 overflow-hidden mb-10">
 						<img
 							crossorigin="anonymous"
 							src={
 								($i18n.language === 'dg-DG'
 									? `${WEBUI_BASE_URL}/doge.png`
 									: isDarkMode
-										? `static/dark-logo.png`
-										: `static/hubai-light-logo.png`)
+										? `static/lorenzetti-logo-white.png`
+										: `static/lorenzetti-logo.png`)
 							}
 							class="w-full"
 							aria-hidden="true"
@@ -136,7 +136,7 @@
 
 				</div>
 
-				<div class="flex flex-row justify-center gap-3 @sm:gap-3.5 w-fit px-5 max-w-xl">
+				<div class="flex flex-col justify-center gap-3 @sm:gap-3.5 w-fit px-5 max-w-xl">
 					<div class="flex shrink-0 justify-center">
 						<div class="flex -space-x-4 mb-0.5" in:fade={{ duration: 100 }}>
 							{#each models as model, modelIdx}
@@ -147,6 +147,7 @@
 									placement="top"
 								>
 									<button
+									class=" mx-3"
 										aria-hidden={models.length <= 1}
 										aria-label={$i18n.t('Get information on {{name}} in the UI', {
 											name: models[modelIdx]?.name
@@ -179,7 +180,7 @@
 
 						</div>
 					</div>
-
+					
 					<div
 						class=" text-3xl @sm:text-3xl line-clamp-1 flex items-center"
 						in:fade={{ duration: 100 }}
@@ -193,6 +194,7 @@
 								<span class="line-clamp-1">
 									{models[selectedModelIdx]?.name}
 								</span>
+								
 							</Tooltip>
 						{:else}
 							{$i18n.t('Hello, {{name}}', { name: $user?.name })}
