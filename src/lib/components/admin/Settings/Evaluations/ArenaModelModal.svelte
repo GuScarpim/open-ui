@@ -14,7 +14,7 @@
 	import ConfirmDialog from '$lib/components/common/ConfirmDialog.svelte';
 	import XMark from '$lib/components/icons/XMark.svelte';
 	import { WEBUI_BASE_URL } from '$lib/constants';
-	import { getModelIcon } from '$lib/utils/ai-models-utils';
+	import { getModelIcon } from '$lib/utils/ai-models-utils'
 
 	export let show = false;
 	export let edit = false;
