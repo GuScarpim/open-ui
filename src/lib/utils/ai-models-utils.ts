@@ -37,7 +37,7 @@ export interface NormalizedModel extends Model {
 export function getModelIcon(modelName: string) {
   if (!modelName) return null;
 
-  const name = modelName.toLowerCase();
+  const name = modelName.toLowerCase()
 
   if (name.includes("gpt")) {
     return "/static/gptai-logo.png";
