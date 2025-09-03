@@ -168,7 +168,7 @@
 			{#each panes as pane, i (pane)}
 				<div
 					animate:flip={{ duration: 300, easing: cubicOut }}
-					class={`relative flex flex-col items-center justify-center lg:pt-12
+					class={`relative flex flex-col items-center justify-center
 									w-full max-w-md h-[480px] overflow-hidden
 									${i === 0 ? 'rounded-l-2xl' : 'rounded-r-2xl'}
 									${pane === 'panel' ? 'bg-[#91051F] text-white' : 'bg-white dark:bg-gray-800 shadow-lg'}
