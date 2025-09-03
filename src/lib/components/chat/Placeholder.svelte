@@ -126,8 +126,8 @@
 								($i18n.language === 'dg-DG'
 									? `${WEBUI_BASE_URL}/doge.png`
 									: isDarkMode
-										? `static/lorenzetti-logo-white.png`
-										: `static/lorenzetti-logo.png`)
+										? `static/dark-logo-fit.png`
+										: `static/light-logo.png`)
 							}
 							class="w-full"
 							aria-hidden="true"

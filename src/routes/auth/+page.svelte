@@ -171,21 +171,21 @@
 					class={`relative flex flex-col items-center justify-center
 									w-full max-w-md h-[480px] overflow-hidden
 									${i === 0 ? 'rounded-l-2xl' : 'rounded-r-2xl'}
-									${pane === 'panel' ? 'bg-[#91051F] text-white' : 'bg-white dark:bg-gray-800 shadow-lg'}
+									${pane === 'panel' ? 'bg-[#1EACA4] text-white' : 'bg-white dark:bg-gray-800 shadow-lg'}
 					`}
 				>
 					{#if pane === 'panel'}
 						<div class="h-[200px] overflow-hidden flex items-center justify-center">
 							<img
-								src="/static/lorenzetti-logo-white-ia.png"
-								class="max-h-28 w-auto object-contain"
+								src="/static/dark-logo-white.png"
+								class="w-auto object-contain"
 								alt="Logo Lorenzetti"
 							/>
 						</div>
 
 						<div
 							class="absolute bottom-3 right-3 flex items-center gap-2 rounded-full px-3 py-1
-											bg-black/30 text-white shadow-sm backdrop-blur-sm"
+											bg-black/60 text-white shadow-sm backdrop-blur-sm"
 						>
 							<span class="text-[11px] font-medium uppercase tracking-wide">Powered by</span>
 							<img

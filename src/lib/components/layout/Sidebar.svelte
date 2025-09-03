@@ -533,7 +533,7 @@
 						<div class=" self-center flex items-center justify-center size-9">
 							<img
 								crossorigin="anonymous"
-								src={isDarkMode ? "/static/lorenzetti-logo-white.png" : "/static/lorenzetti-logo.png"}
+								src={isDarkMode ? "/static/dark-logo-fit.png" : "/static/light-logo.png"}
 								class="sidebar-new-chat-icon group-hover:hidden "
 								alt=""
 							/>
@@ -708,7 +708,7 @@
 					<div class=" w-35 h-20 overflow-hidden flex items-center justify-start">
 						<img
 							crossorigin="anonymous"
-							src={isDarkMode ? "/static/lorenzetti-logo-white.png" : "/static/lorenzetti-logo.png"}
+							src={isDarkMode ? "/static/dark-logo-fit.png" : "/static/light-logo.png"}
 							class="object-contain w-full h-full"
 							alt=""
 							style=""
