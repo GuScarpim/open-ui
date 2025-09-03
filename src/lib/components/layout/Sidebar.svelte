@@ -81,7 +81,19 @@
 	let folders = {};
 	let newFolderId = null;
 
-	const isDarkMode = document.documentElement.classList.contains('dark');
+	let isDarkMode = false;
+
+	onMount(() => {
+		const update = () => {
+			isDarkMode = document.documentElement.classList.contains('dark');
+		};
+		update();
+
+		const obs = new MutationObserver(update);
+		obs.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+		return () => obs.disconnect();
+	});
 
 	const initFolders = async () => {
 		const folderList = await getFolders(localStorage.token).catch((error) => {
@@ -532,10 +544,11 @@
 					>
 						<div class=" self-center flex items-center justify-center size-9">
 							<img
+								key={isDarkMode ? 'logo-dark' : 'logo-light'}
 								crossorigin="anonymous"
-								src={isDarkMode ? "/static/dark-logo-fit.png" : "/static/light-logo.png"}
-								class="sidebar-new-chat-icon group-hover:hidden "
-								alt=""
+								src={`${isDarkMode ? '/static/dark-logo-fit.png' : '/static/light-logo.png'}?v=${isDarkMode ? 'dark' : 'light'}`}
+								class="object-contain w-full h-full"
+								alt="Lorenzetti Logo"
 							/>
 
 							<Sidebar className="size-5 hidden group-hover:flex" />
@@ -708,7 +721,7 @@
 					<div class=" w-35 h-20 overflow-hidden flex items-center justify-start">
 						<img
 							crossorigin="anonymous"
-							src={isDarkMode ? "/static/dark-logo-fit.png" : "/static/light-logo.png"}
+							src={isDarkMode ? '/static/dark-logo-fit.png' : '/static/light-logo.png'}
 							class="object-contain w-full h-full"
 							alt=""
 							style=""
@@ -726,7 +739,7 @@
 						}}
 					>
 						<div class=" self-center p-1.5 text-gray-800 dark:text-gray-200">
-							<Sidebar/>
+							<Sidebar />
 						</div>
 					</button>
 				</Tooltip>
@@ -922,7 +935,7 @@
 					}}
 				>
 					{#if $pinnedChats.length > 0}
-						<div class="flex flex-col space-y-1 rounded-xl ">
+						<div class="flex flex-col space-y-1 rounded-xl">
 							<Folder
 								className=""
 								bind:open={showPinnedChat}
