@@ -200,14 +200,6 @@ select {
 	display: none;
 }
 
-.scrollbar-hidden:active::-webkit-scrollbar-thumb,
-.scrollbar-hidden:focus::-webkit-scrollbar-thumb,
-.scrollbar-hidden:hover::-webkit-scrollbar-thumb {
-	visibility: visible;
-}
-.scrollbar-hidden::-webkit-scrollbar-thumb {
-	visibility: hidden;
-}
 
 .scrollbar-hidden::-webkit-scrollbar-corner {
 	display: none;
@@ -246,14 +238,6 @@ input[type='number'] {
 	width: 0.4rem;
 }
 
-.katex-display:active::-webkit-scrollbar-thumb,
-.katex-display:focus::-webkit-scrollbar-thumb,
-.katex-display:hover::-webkit-scrollbar-thumb {
-	visibility: visible;
-}
-.katex-display::-webkit-scrollbar-thumb {
-	visibility: hidden;
-}
 
 .katex-display::-webkit-scrollbar-corner {
 	display: none;
@@ -264,15 +248,6 @@ input[type='number'] {
 	width: 100%;
 }
 
-.cm-scroller:active::-webkit-scrollbar-thumb,
-.cm-scroller:focus::-webkit-scrollbar-thumb,
-.cm-scroller:hover::-webkit-scrollbar-thumb {
-	visibility: visible;
-}
-
-.cm-scroller::-webkit-scrollbar-thumb {
-	visibility: hidden;
-}
 
 .cm-scroller::-webkit-scrollbar-corner {
 	display: none;
