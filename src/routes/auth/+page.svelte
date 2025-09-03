@@ -115,7 +115,7 @@
 		const el = /** @type {HTMLImageElement|null} */ (document.getElementById('powered-logo'));
 		if (!el) return;
 		const isDark = document.documentElement.classList.contains('dark');
-		const url = isDark ? `/static/dark-logo-fit.png` : `/static/dark-logo-fit.png`;
+		const url = isDark ? `/static/overlabs-logo-fit.png` : `/static/overlabs-logo-fit.png`;
 		const img = new Image();
 		img.src = url;
 		img.onload = () => {
@@ -177,7 +177,7 @@
 					{#if pane === 'panel'}
 						<div class="h-[200px] overflow-hidden flex items-center justify-center">
 							<img
-								src="/static/lorenzetti-logo-white.png"
+								src="/static/lorenzetti-logo-white-ia.png"
 								class="max-h-28 w-auto object-contain"
 								alt="Logo Lorenzetti"
 							/>
@@ -192,9 +192,9 @@
 								id="powered-logo"
 								crossorigin="anonymous"
 								src={document?.documentElement?.classList.contains('dark')
-									? `${WEBUI_BASE_URL}/static/dark-logo-fit.png`
-									: `${WEBUI_BASE_URL}/static/light-logo.png`}
-								class="w-18 rounded-full object-contain"
+									? `${WEBUI_BASE_URL}/static/overlabs-logo-fit.png`
+									: `${WEBUI_BASE_URL}/static/overlabs-logo-fit.png`}
+								class="w-20 rounded-full object-contain"
 								alt="Overlabs"
 							/>
 						</div>
