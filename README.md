@@ -85,7 +85,7 @@ npm run dev
 
 
 
-# OpenWebUI – Guia de Pastas & Módulos
+# Guia de Pastas & Módulos
 
 > Documentação de arquitetura, estrutura de pastas e responsabilidades de cada módulo, com foco em onboarding rápido para colaboradores.
 
@@ -388,13 +388,4 @@ Componentes Svelte, organizados por áreas de produto.
 
 ---
 
-## 12) Créditos & manutenção
 
-* Esta documentação foi gerada a partir da árvore fornecida do projeto OpenWebUI.
-* Mantenedores devem atualizar esta seção ao adicionar novos domínios em `lib/apis/*`, novas áreas em `lib/components/*` e novas rotas em `routes/*`.
-
----
-
-### Changelog da documentação
-
-* **v1.0** — Primeiro guia de pastas & módulos.
