@@ -23,6 +23,7 @@
 
 	let loaded = false;
 	let onboarding = false;
+	let isLoading = false;
 
 	let mode = 'signin'; // 'signin' | 'signup' | 'ldap'
 
@@ -55,11 +56,13 @@
 	};
 
 	const signInHandler = async () => {
+		isLoading = true;
 		const sessionUser = await userSignIn(email, password).catch((error) => {
 			toast.error(String(error));
 			return null;
 		});
 		await setSessionUser(sessionUser);
+		isLoading = false;
 	};
 
 	const signUpHandler = async () => {
@@ -67,6 +70,7 @@
 			toast.error($i18n.t('Passwords do not match.'));
 			return;
 		}
+		isLoading = true;
 		const sessionUser = await userSignUp(name, email, password, generateInitialsImage(name)).catch(
 			(error) => {
 				toast.error(String(error));
@@ -74,14 +78,17 @@
 			}
 		);
 		await setSessionUser(sessionUser);
+		isLoading = false;
 	};
 
 	const ldapSignInHandler = async () => {
+		isLoading = true;
 		const sessionUser = await ldapUserSignIn(ldapUsername, password).catch((error) => {
 			toast.error(String(error));
 			return null;
 		});
 		await setSessionUser(sessionUser);
+		isLoading = false;
 	};
 
 	const submitHandler = async () => {
@@ -165,15 +172,16 @@
 
 	{#if loaded}
 		<div class="fixed flex justify-center items-center h-full w-full">
-			{#each panes as pane, i (pane)}
-				<div
-					animate:flip={{ duration: 300, easing: cubicOut }}
-					class={`relative flex flex-col items-center justify-center
-									w-full max-w-md h-[480px] overflow-hidden
-									${i === 0 ? 'rounded-l-2xl' : 'rounded-r-2xl'}
-									${pane === 'panel' ? 'bg-[#1EACA4] text-white' : 'bg-white dark:bg-gray-800 shadow-lg'}
-					`}
-				>
+			<div class="shadow-[0_0_14px_3px_#00000057] rounded-2xl overflow-hidden flex">
+				{#each panes as pane, i (pane)}
+					<div
+						animate:flip={{ duration: 300, easing: cubicOut }}
+						class={`relative flex flex-col items-center justify-center
+										w-full max-w-md h-[480px] overflow-hidden
+										${i === 0 ? 'rounded-l-2xl' : 'rounded-r-2xl'}
+										${pane === 'panel' ? 'bg-[#1EACA4] text-white' : 'bg-white dark:bg-gray-800'}
+						`}
+					>
 					{#if pane === 'panel'}
 						<div class="h-[200px] overflow-hidden flex items-center justify-center">
 							<img
@@ -292,9 +300,13 @@
 							{/if}
 
 							<button
-								class="bg-primary text-white font-medium rounded-full py-2 mt-2 hover:bg-primary/90 transition"
+								class="bg-primary text-white font-medium rounded-full py-2 mt-2 hover:bg-primary/90 transition disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
 								type="submit"
+								disabled={isLoading}
 							>
+								{#if isLoading}
+									<Spinner className="size-4" />
+								{/if}
 								{mode === 'ldap'
 									? $i18n.t('Authenticate')
 									: mode === 'signin'
@@ -330,8 +342,9 @@
 							{/if}
 						</form>
 					{/if}
-				</div>
-			{/each}
+					</div>
+				{/each}
+			</div>
 		</div>
 	{/if}
 </div>
